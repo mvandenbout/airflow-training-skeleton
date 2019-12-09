@@ -9,7 +9,7 @@ args = {
 }
 
 with DAG(
-        dag_id='opdracht1',
+        dag_id='opdracht2',
         default_args=args,
         dagrun_timeout=None,
         schedule_interval='@daily',
