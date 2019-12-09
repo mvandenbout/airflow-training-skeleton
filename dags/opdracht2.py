@@ -12,6 +12,7 @@ with DAG(
         dag_id='opdracht1',
         default_args=args,
         dagrun_timeout=None,
+        schedule_interval='@daily',
 
 ) as dag:
     task1 = DummyOperator(task_id='task1')
@@ -20,6 +21,6 @@ with DAG(
     task4 = DummyOperator(task_id='task4')
     task5 = DummyOperator(task_id='task5')
 
-task1 >> task2 >> task3 >> task4 >> task5
+task1 >> task2 >> [task3, task4] >> task5
 
 
