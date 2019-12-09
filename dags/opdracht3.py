@@ -11,7 +11,7 @@ with DAG(
         dag_id='opdracht2',
         default_args=args,
         dagrun_timeout=None,
-        schedule_interval='@daily',
+        schedule_interval='45 13 * * 1,3,5',
 
 ) as dag:
     task1 = DummyOperator(task_id='task1')
