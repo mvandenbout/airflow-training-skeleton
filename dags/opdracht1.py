@@ -8,7 +8,7 @@ args = {
 }
 
 with DAG(
-        dag_id='opdracht 1',
+        dag_id='opdracht1',
         default_args=args,
         dagrun_timeout=None,
 ) as dag:
