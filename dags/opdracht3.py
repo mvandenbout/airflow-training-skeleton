@@ -8,7 +8,7 @@ args = {
 }
 
 with DAG(
-        dag_id='opdracht2',
+        dag_id='opdracht3',
         default_args=args,
         dagrun_timeout=None,
         schedule_interval='45 13 * * 1,3,5',
