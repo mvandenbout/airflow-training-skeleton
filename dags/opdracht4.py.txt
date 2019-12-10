@@ -1,8 +1,8 @@
 import airflow
 from airflow.models import DAG
 
-from gcsoperator import LaunchToGcsOperator
-from printoperator import PrintOperator
+from operators.gcsoperator import LaunchToGcsOperator
+from operators.printoperator import PrintOperator
 
 
 args = {
@@ -17,7 +17,9 @@ with DAG(
         schedule_interval="0 0 * * *"
 ) as dag:
 
-    gcs_operator = LaunchToGcsOperator(task_id='fetch_to_gcs', name='fetch_to_gcs')
+    gcs_operator = LaunchToGcsOperator(
+        task_id='fetch_to_gcs',
+        name='fetch_to_gcs')
     print_operator = PrintOperator(task_id='print_results', name='print_results')
 
-gcs_operator >> print_operator
+gcs_operator << print_operator

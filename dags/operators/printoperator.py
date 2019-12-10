@@ -13,7 +13,7 @@ class PrintOperator(BaseOperator):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-    def execute(self, start_date, end_date):
+    def execute(self, context):
 
         with open(f"/data/rocket_launches/ds={start_date}/launches.json") as f:
             data = json.load(f)

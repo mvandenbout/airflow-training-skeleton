@@ -1,9 +1,4 @@
-from launchhook import LaunchHook
-import json
-import pathlib
-import posixpath
-import airflow
-import requests
+from dags.hooks.launchhook import LaunchHook
 
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
@@ -15,5 +10,5 @@ class LaunchToGcsOperator(BaseOperator):
         super().__init__(*args, **kwargs)
         self._launchhook = LaunchHook()
 
-    def execute(self, start_date, end_date):
+    def execute(self, context):
         results = self._launchhook.download(start_date, end_date)

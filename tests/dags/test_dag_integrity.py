@@ -13,7 +13,6 @@ from airflow.utils.dag_processing import list_py_file_paths
 DAG_BASE_DIR = path.join(path.dirname(__file__), "..", "..", "dags")
 DAG_PATHS = list_py_file_paths(DAG_BASE_DIR)
 
-
 @pytest.mark.parametrize("dag_path", DAG_PATHS)
 def test_dag_integrity(dag_path):
     """Import DAG file and check for a valid DAG instance."""
@@ -21,7 +20,6 @@ def test_dag_integrity(dag_path):
     dag_name = path.basename(dag_path)
     module = _import_file(dag_name, dag_path)
     assert any(isinstance(var, airflow_models.DAG) for var in vars(module).values())
-
 
 def _import_file(module_name, module_path):
     import importlib.util
