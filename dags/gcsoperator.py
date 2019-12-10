@@ -5,6 +5,9 @@ import posixpath
 import airflow
 import requests
 
+from airflow.models.baseoperator import BaseOperator
+from airflow.utils.decorators import apply_defaults
+
 class LaunchToGcsOperator(BaseOperator):
 
     @apply_defaults
