@@ -12,7 +12,7 @@ class LaunchToGcsOperator(BaseOperator):
 
     @apply_defaults
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def execute(self, start_date, end_date):
 
