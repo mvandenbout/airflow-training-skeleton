@@ -1,10 +1,10 @@
 import json
 import pathlib
 import posixpath
-import airflow
 import requests
 
-from airflow.models.baseoperator import BaseOperator
+import airflow
+from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 class PrintOperator(BaseOperator):
