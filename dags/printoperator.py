@@ -8,7 +8,7 @@ import requests
 from airflow.models.baseoperator import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
-class LaunchToGcsOperator(BaseOperator):
+class PrintOperator(BaseOperator):
 
     @apply_defaults
     def __init__(self, *args, **kwargs):

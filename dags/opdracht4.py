@@ -5,6 +5,7 @@ import airflow
 import requests
 from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
+
 from gcsoperator import LaunchToGcsOperator
 from printoperator import PrintOperator
 
