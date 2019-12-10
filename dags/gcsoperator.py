@@ -1,4 +1,4 @@
-from .launchhook import LaunchHook
+from launchhook import LaunchHook
 import json
 import pathlib
 import posixpath
